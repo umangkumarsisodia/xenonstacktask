@@ -104,6 +104,6 @@ app.post("/contact", async(req, res) => {
     }
 })
 
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
   console.log(`Listening at ${port}`);
 });
