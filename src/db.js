@@ -4,6 +4,8 @@ dotenv.config();
 const mongoose = require("mongoose");
 const validator = require("validator");
 const bcrypt = require("bcrypt");
+const res = require("express/lib/response");
+const jwt = require("jsonwebtoken")
 
 mongoose.connect("mongodb+srv://umang:gnVnb2nN1r0j0MKF@cluster0.93o2n.mongodb.net/?retryWrites=true&w=majority")
 .then(()=>{
@@ -46,8 +48,26 @@ const accountSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true
-    }
+    },
+
+    tokens : [{
+        token : {
+            type : String,
+            required : true
+        }
+    }]
 });
+
+accountSchema.methods.generateAuthToken = async function() {
+    try {
+        const token = jwt.sign({_id:this._id.toString()}, "mynameisumangkumarsisodiamernstackdeveloper");
+        this.tokens = this.tokens.concat({token:token});
+        await this.save();
+        return token;
+    } catch (error) {
+        res.send(error)
+    }
+}
 
 accountSchema.pre("save", async function(next) {
     if(this.isModified("password")) {

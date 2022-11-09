@@ -11,6 +11,9 @@ var bodyParser = require("body-parser");
 const { json } = require("express/lib/response");
 const res = require("express/lib/response");
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const cookieParser = require("cookie-parser");
+const auth = require("./middleware/auth")
 
 
 const app = express();
@@ -24,6 +27,7 @@ const partialsPath = path.join(__dirname, "../templates/partials");
 app.use(express.static(staticPath));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
 app.set("view engine", "hbs");
 app.set("views", viewPath);
 hbs.registerPartials(partialsPath);
@@ -41,8 +45,18 @@ app.get("/signup", (req, res) => {
   res.render("signup");
 });
 
-app.get("/contactus", (req, res) => {
+app.get("/contactus", auth, (req, res) => {
   res.render("contact");
+});
+
+app.get("/logout", auth, (req, res) => {
+  try {
+    res.clearCookie("user");
+    req.user.save();
+    res.render("signin")
+  } catch (error) {
+    res.status(401).send(error);
+  }
 });
 
 app.post("/registered", async (req, res) => {
@@ -60,6 +74,11 @@ app.post("/registered", async (req, res) => {
           phone: req.body.phone,
           dob: req.body.dob,
           password: req.body.password,
+        });
+
+        const token = await data.generateAuthToken();
+        res.cookie("user", token, {
+          httpOnly : true
         });
         const result = await data.save();
         res.send("Your account created successfully.");
@@ -80,6 +99,11 @@ app.post("/log", async (req, res) => {
     const password = req.body.password;
     const userMail = await db.Account.findOne({ email:email });
     const isMatch = await bcrypt.compare(password, userMail.password);
+    const token = await userMail.generateAuthToken();
+    res.cookie("user", token, {
+      httpOnly : true
+    });
+
     if (isMatch) {
       res.status(201).render("index");
     } else {
