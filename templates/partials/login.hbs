@@ -1,0 +1,28 @@
+<section id="login">
+    <div class="page container p-5">
+        <div class="row">
+            <div class="col-6 d-flex align-items-center">
+                <h1>Welcome to My Log</h1>
+            </div>
+            <div class="form-area col-6">
+                <h1 class="mb-4 text-center">Sign In</h1>
+                <form method="POST" action="/log">
+                    <div class="row mb-3">
+                        <label for="femail" class="col-sm-2 col-form-label">Email</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" name="email" id="femail">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="fpassword" class="col-sm-2 col-form-label">Password</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" name="password" id="fpassword">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success">Sign in</button>
+                </form>
+                <p>Not have any account?<a>Create New Account</a></p>
+            </div>
+        </div>
+    </div>
+</section>

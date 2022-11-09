@@ -1,0 +1,87 @@
+#login {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.nav-area, .nav-area .container {
+    background-color: #769fcd!important;
+}
+
+.nav-area ul {
+    margin-left: auto;
+}
+
+#home-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.page {
+    border: 2px solid #f7fbfc;
+    background-image: linear-gradient(to right, #f7fbfc, #d6e6f2, #b9d7ea, #769fcd);
+}
+
+.form-area {
+    padding: 2rem 6rem;
+    border: 2px solid #78aeea;
+    background-color: #78aeea;
+    border-radius: 25px 0 25px 0;
+}
+
+@media screen and (max-width:990px) {
+    #register {
+        position: relative;
+    }
+
+    .page {
+        position: absolute;
+        top: 0rem;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0rem!important;
+    }
+    .page h1 {
+        font-size: 2rem!important;
+    }
+}
+
+@media screen and (max-width:770px) {
+    .page h1 {
+        font-size: 1.4rem!important;
+    }
+}
+
+@media screen and (max-width:539px) {
+    .page h1 {
+        font-size: 1rem!important;
+    }
+
+    #register form input,  #register form label {
+        font-size: 0.5rem!important;
+    }
+}
+
+@media screen and (max-width:412px) {
+    .page h1 {
+        font-size: 0.5rem!important;
+    }
+}
+
+@media screen and (max-width:354px) {
+    #register form input,  #register form label {
+        font-size: 0.3rem!important;
+    }
+}

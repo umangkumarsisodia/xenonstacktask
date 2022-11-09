@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My log - Contact Us</title>
+    {{>header}}
+</head>
+<body>
+    {{>navbar}}
+    <div class="d-flex flex-col justify-content-center align-items-center" style="height: 100vh;">
+        <div class="form-area col-6">
+                    <h1 class="mb-4 text-center">Contact Us</h1>
+                    <form method="POST" action="/contact">
+                        <div class="row mb-3">
+                            <label for="femail" class="col-sm-2 col-form-label">Email</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control" name="email" id="femail">
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="fquery" class="col-sm-2 col-form-label">Your query</label>
+                            <div class="col-sm-10">
+                                <textarea row="3" cols="4" class="form-control" name="query" id="fquery"></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </form>
+                </div>
+            </div>
+        {{>below}}
+    </div>
+</body>
+</html>
