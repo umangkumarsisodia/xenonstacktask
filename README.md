@@ -12,13 +12,16 @@ The website has 4 pages - Login, Sign up, Home and Contact us page.
 ## Here is the images of my website attatched below:-
 
 ## Login page:-
-![Screenshot (65)](https://user-images.githubusercontent.com/77136755/200990786-8bd62ad7-6239-43e7-9172-989cab73d156.png)
+![Screenshot (65)](https://user-images.githubusercontent.com/77136755/200992049-e194b9fb-a7e3-437e-bb38-d0a574e0a1cf.png)
+
 
 ## Sign up page:-
-![Screenshot (66)](https://user-images.githubusercontent.com/77136755/200990823-e595c80b-d39e-497b-ab3a-8ea2942cdbd4.png)
+![Screenshot (66)](https://user-images.githubusercontent.com/77136755/200992080-27a40386-c521-420d-b58b-3c083c053651.png)
+
 
 ## Home page
-![Screenshot (67)](https://user-images.githubusercontent.com/77136755/200990875-8a0b6341-a58a-42dc-9b9b-cb83135d6030.png)
+![Screenshot (67)](https://user-images.githubusercontent.com/77136755/200992101-b628b459-f13b-4728-aced-a1da867dc1bf.png)
+
 
 ## Contact us page
-![Screenshot (68)](https://user-images.githubusercontent.com/77136755/200990902-aed4edd6-f519-490e-9c19-814792abaf7a.png)
+![Screenshot (68)](https://user-images.githubusercontent.com/77136755/200992130-1895dc0b-1d9a-4377-ae36-f0396064547b.png)
